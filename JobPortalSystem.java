@@ -44,7 +44,7 @@ public class JobPortalSystem extends JFrame {
         heading.setFont(new Font("Segoe UI", Font.BOLD, 24));
         heading.setForeground(Color.WHITE);
 
-        JLabel subtitle = new JLabel("Уникальный дизайн: темная шапка + светлые карточки");
+        JLabel subtitle = new JLabel("Управление заявками кандидатов");
         subtitle.setForeground(new Color(215, 231, 255));
         subtitle.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 
@@ -85,7 +85,7 @@ public class JobPortalSystem extends JFrame {
         controls.add(btnClear);
 
         gbc.gridx = 0;
-        gbc.gridy = 4;
+        gbc.gridy = 8;
         gbc.gridwidth = 2;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         formCard.add(controls, gbc);
@@ -150,14 +150,16 @@ public class JobPortalSystem extends JFrame {
     }
 
     private void addField(JPanel panel, GridBagConstraints gbc, int row, String label, JComponent field) {
-        gbc.gridy = row;
+        int baseRow = row * 2;
+
+        gbc.gridy = baseRow;
         gbc.gridx = 0;
         gbc.gridwidth = 2;
         JLabel jLabel = new JLabel(label);
         jLabel.setFont(new Font("Segoe UI", Font.BOLD, 13));
         panel.add(jLabel, gbc);
 
-        gbc.gridy = row + 1;
+        gbc.gridy = baseRow + 1;
         panel.add(field, gbc);
     }
 
